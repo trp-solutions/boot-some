@@ -160,7 +160,7 @@ class BootSomeFormsFloatingFile extends \TRP\HealDocument\Wrapper {
 		$this->primary_element = $this->float_wrapper->el('input',['type'=>'file','class'=>'d-none','onchange'=>$onchange]);
 
 		$onclick = "this.previousElementSibling.click();";
-		$ondrop = "var e=this.previousElementSibling;e.files=event.dataTransfer.files;e.dispatchEvent(new Event('change'));";
+		$ondrop = "var e=this.previousElementSibling;e.files=event.dataTransfer.files;e.dispatchEvent(new Event('change'));event.preventDefault();";
 		$this->form_control = $this->float_wrapper->el('input',['type'=>'text','readonly','class'=>'form-control','placeholder'=>$label,'onclick'=>$onclick,'ondrop'=>$ondrop,'ondragover'=>'event.preventDefault();']);
 		$this->label = $this->float_wrapper->el('label')->te((string) $label);
 		$this->generate_id($name);
