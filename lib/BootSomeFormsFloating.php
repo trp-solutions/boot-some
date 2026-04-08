@@ -156,16 +156,18 @@ class BootSomeFormsFloatingFile extends \TRP\HealDocument\Wrapper {
 		}
 		$this->float_wrapper = $this->input_group->el('div',['class'=>'form-floating']);
 
-		$onchange = "this.parentElement.querySelector('input[type=text]').value=this.files[0]?this.files[0].name:'';";
+		$onchange = "this.nextElementSibling.value=this.files[0]?this.files[0].name:'';";
 		$this->primary_element = $this->float_wrapper->el('input',['type'=>'file','class'=>'d-none','onchange'=>$onchange]);
 
-		$js = "this.parentElement.parentElement.querySelector('input[type=file]').click();";
-		$this->form_control = $this->float_wrapper->el('input',['type'=>'text','readonly','class'=>'form-control','placeholder'=>$label,'onclick'=>$js]);
+		$onclick = "this.previousElementSibling.click();";
+		$ondrop = "var e=this.previousElementSibling;e.files=event.dataTransfer.files;e.dispatchEvent(new Event('change'));";
+		$this->form_control = $this->float_wrapper->el('input',['type'=>'text','readonly','class'=>'form-control','placeholder'=>$label,'onclick'=>$onclick,'ondrop'=>$ondrop,'ondragover'=>'event.preventDefault();']);
 		$this->label = $this->float_wrapper->el('label')->te((string) $label);
 		$this->generate_id($name);
 		if(isset($icon)){
-			$js = "this.parentElement.querySelector('input[type=file]').click();event.preventDefault();";
-			$this->button = $this->input_group->button(null, $icon, 'outline-secondary')->at(['onclick'=>$js]);
+			$onclick = "this.parentElement.querySelector('input[type=file]').click();event.preventDefault();";
+			$ondrop = "var e=this.parentElement.querySelector('input[type=file]');e.files=event.dataTransfer.files;e.dispatchEvent(new Event('change'));event.preventDefault();";
+			$this->button = $this->input_group->button(null, $icon, 'outline-secondary')->at(['onclick'=>$onclick,'ondrop'=>$ondrop,'ondragover'=>'event.preventDefault();']);
 		}
 
 		if(isset($name)){
@@ -175,7 +177,7 @@ class BootSomeFormsFloatingFile extends \TRP\HealDocument\Wrapper {
 	}
 
 	public function onchange($js){
-		$onchange = "this.parentElement.querySelector('input[type=text]').value=this.files[0]?this.files[0].name:'';";
+		$onchange = "this.nextElementSibling.value=this.files[0]?this.files[0].name:'';";
 		$this->primary_element->at(['onchange'=>$onchange.$js]);
 		return $this;
 	}
