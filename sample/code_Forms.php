@@ -85,8 +85,8 @@ $inputgroup = $group->inputgroup();
 $inputgroup->text('See');
 $inputgroup->button('E-mail','envelope');
 $inputgroup->select('Random');
-$inputgroup->input('input3','Value');
-$inputgroup->button('E-mail','envelope');
+$inputgroup->input('input3','user@example.com');
+$inputgroup->button('Copy','copy')->at(['onclick' => "BootSome.copy(this,document.getElementById('input3').value)"]);
 
 $group = $form->form_horizontal(4);
 $group->button('Reload','exclamation-circle','warning','.');
