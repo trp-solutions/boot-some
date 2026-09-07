@@ -17,7 +17,7 @@ require_once 'code_Index.php';
 require_once 'code_Navbar.php';
 
 $allowed = [
-	'Alerts','Badge','Breadcrumb','Card','Carousel','Display',
+	'Ajax','Alerts','Badge','Breadcrumb','Card','Carousel','Display',
 	'Dropdown','FloatingLabels','Forms','Index','Jumbotron',
 	'Modal','Navbar','Pagination','Ratios','Tables','Grid',
 ];
