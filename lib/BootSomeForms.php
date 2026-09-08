@@ -8,11 +8,6 @@ declare(strict_types=1);
 require_once __DIR__.'/BootSomeFormsInputGroup.php';
 
 class BootSomeForms extends \TRP\HealDocument\Plugin {
-	public static function form_row($parent){
-		//Legacy Support
-		return $parent->el('div',['class'=>'row']);
-	}
-
 	public static function form_group($parent, $col = null,$left = false){
 		return new BootSomeFormsGroup($parent, $col, $left);
 	}
@@ -176,7 +171,7 @@ class BootSomeFormsHorizontal extends \TRP\HealDocument\Wrapper {
 	private $wrap = null;
 
 	public function __construct($parent, $col = null){
-		$this->primary_element = $parent->el('div',['class'=>'row']);
+		$this->primary_element = $parent->row();
 		if($col) $this->col = (int) $col;
 	}
 

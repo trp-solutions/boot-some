@@ -1,7 +1,7 @@
 .bootsome-grid {
 	--bootsome-flow-direction: row;
-	--bs-gutter-x: .5rem;
-	--bs-gutter-y: .5rem;
+	--bs-gutter-x: #{$grid-gutter-width};
+	--bs-gutter-y: #{$grid-gutter-width};
 
 	display: grid;
 	gap: var(--bs-gutter-y) var(--bs-gutter-x);

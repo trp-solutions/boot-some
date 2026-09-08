@@ -15,7 +15,7 @@ BootSome::$head->el('script',['src'=>'../lib/BootSomeTokenSelect.js']);
 $main = BootSome::$body->container();
 $main->el('h1')->te('Forms - Floating');
 $form = $main->form('.','get');
-$row = $form->row_gutter('g-2');
+$row = $form->row();
 $row->col('col-12','col-md-4')->input('Input','input4')->datalist(['String1','String2','String3']);
 
 $row->col('col-12','col-md-4')->input('Number','input5',123)->at(['type'=>'number']);
@@ -65,7 +65,7 @@ $select->options([
 ]);
 $inputgroup->input('Phone Number','input15');
 
-$row = $form->row_gutter('g-2 mt-5');
+$row = $form->row('mt-5');
 
 BootSomeFormsFloating::$required_label = 'Please Fill';
 
@@ -127,7 +127,7 @@ $datalist->option('Internet Explorer',4);
 $datalist->option('Lynx',5);
 $datalist->option('Safari',6);
 
-$row = $form->row_gutter('g-2 mt-5');
+$row = $form->row('mt-5');
 $row->col('col-12','col-md-4')->input('Input','input4d','Value')->disabled();
 
 $row->col('col-12','col-md-4')->input('Number','input5d',123)->at(['type'=>'number'])->disabled();

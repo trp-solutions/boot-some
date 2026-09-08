@@ -15,12 +15,6 @@ class BootSomeLayout extends \TRP\HealDocument\Plugin {
 		return new BootSomeRow($parent,$class);
 	}
 
-	public static function row_gutter($parent,...$class){
-		$row = new BootSomeRow($parent,$class);
-		$row->at(['class'=>'row_gutter'],true);
-		return $row;
-	}
-
 	public static function pagination(object $parent,int $total,int $limit,int $page,object $url){
 		if($total<=$limit) return $parent;
 
