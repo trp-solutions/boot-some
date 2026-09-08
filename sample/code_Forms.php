@@ -13,7 +13,6 @@ BootSome::$head->el('script',['src'=>'../lib/BootSomeForms.js']);
 $main = BootSome::$body->container();
 $main->hidden('host',$_SERVER['REMOTE_ADDR']);
 
-$main->at(['class'=>'mb-5'],true);
 $main->el('h1')->te('Forms');
 
 $form = $main->form('.','get');
@@ -113,3 +112,5 @@ $select = $form->select('select1');
 $select->option('Option1',1);
 $select->option('Option2',2);
 $form->button('Link',null,'info','http://example.com');
+
+$main->el('hr');

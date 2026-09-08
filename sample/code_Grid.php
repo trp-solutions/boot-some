@@ -71,7 +71,9 @@ $datalist->option('Internet Explorer',4);
 $datalist->option('Lynx',5);
 $datalist->option('Safari',6);
 
-$grid = $form->grid_horizontal(6,true)->rows(5,'lg')->at(['class'=>'mt-5'],true);
+$form->el('h1')->te('Horizontal');
+
+$grid = $form->grid_horizontal(6,true)->rows(5,'lg');
 
 $grid->input('Input','input4d','Value');
 
