@@ -3,6 +3,10 @@ BootSome is licensed under the Apache License 2.0 license
 https://github.com/TRP-Solutions/boot-some/blob/master/LICENSE
 */
 
+.form-floating .form-control, .form-floating .form-select {
+	padding-left: calc($form-floating-padding-x * 3);
+}
+
 $form-floating-required-top: max(0px, min($form-floating-padding-y, $form-floating-padding-x)) !default;
 $form-floating-required-right: max(0px, min($form-floating-padding-y, $form-floating-padding-x)) !default;
 
