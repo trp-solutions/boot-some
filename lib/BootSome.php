@@ -45,3 +45,6 @@ require_once __DIR__.'/BootSomeNavbar.php';
 
 require_once __DIR__.'/BootSomeTables.php';
 \TRP\HealDocument\HealDocument::register_plugin('BootSomeTable');
+
+require_once __DIR__.'/BootSomeDataBlock.php';
+\TRP\HealDocument\HealDocument::register_plugin('BootSomeDataBlock');
