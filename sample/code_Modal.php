@@ -17,14 +17,12 @@ require_once '../lib/BootSomeForms.php';
 \TRP\HealDocument\HealDocument::register_plugin('BootSomeForms');
 
 // Open modal
-BootSome::$body->at(['class'=>'modal-open']);
 BootSome::$dialog->at(['open']);
 
 $main = BootSome::$body->container();
 $main->el('h1')->te('Modal');
 
-$js = "document.body.classList.add('modal-open');";
-$js .= "document.getElementById('dialog').setAttribute('open','');";
+$js = "document.getElementById('dialog').setAttribute('open','');";
 $main->button('Open','folder-open','info')->at(['onclick'=>$js]);
 
 for($i = 1;$i < 50;$i++) {
@@ -38,7 +36,6 @@ $header = $modal->header();
 $header->title('Title');
 $closejs = "document.getElementById('dialog').removeAttribute('open');";
 //$closejs .= "document.getElementById('dialog').innerHTML='';";
-$closejs .= "document.body.classList.remove('modal-open');";
 $header->close()->at(['onclick'=>$closejs]);
 
 $tabs = $modal->navs('tabs');
