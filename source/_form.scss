@@ -38,3 +38,7 @@ div:not(.input-group) > a.btn:not(:last-child),
 div:not(.input-group) > select.form-select:not(:last-child) {
 	margin-right: $spacer;
 }
+div.row > div.d-grid > button.btn {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
