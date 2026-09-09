@@ -5,6 +5,11 @@ https://github.com/TRP-Solutions/boot-some/blob/master/LICENSE
 div.card {
 	margin-bottom: $spacer;
 }
+div.card div.card-header {
+	padding: $spacer;
+	font-size: $font-size-lg;
+	font-weight: $font-weight-semibold;
+}
 div.card div.row:last-child > * {
 	margin-bottom: 0rem !important;
 }

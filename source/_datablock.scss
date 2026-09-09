@@ -1,0 +1,15 @@
+/*
+BootSome is licensed under the Apache License 2.0 license
+https://github.com/TRP-Solutions/boot-some/blob/master/LICENSE
+*/
+div.db-label {
+	font-size: 0.85rem;
+	color: $gray-600;
+	margin-bottom:-.15em;
+}
+div.db-value {
+	padding-left: calc($form-floating-padding-x * 3 - $spacer);
+}
+div.db-value:not(:last-child) {
+	margin-bottom: $spacer;
+}

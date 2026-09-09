@@ -4,6 +4,8 @@ https://github.com/TRP-Solutions/boot-some/blob/master/LICENSE
 */
 table.table button.btn,
 table.table a.btn,
+div.card-header button.btn,
+div.card-header a.btn,
 div.form-inline button.btn,
 div.form-inline a.btn {
 	padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
@@ -11,6 +13,7 @@ div.form-inline a.btn {
 	border-radius: $border-radius-sm;
 }
 table.table input.form-control,
+div.card-header input.form-control,
 div.form-inline input.form-control {
 	min-height: $input-height-sm;
 	padding: $input-padding-y-sm $input-padding-x-sm;
@@ -18,6 +21,7 @@ div.form-inline input.form-control {
 	border-radius: $input-border-radius-sm;
 }
 table.table select.form-select,
+div.card-header select.form-select,
 div.form-inline select.form-select {
 	padding: $form-select-padding-y-sm $form-select-padding-x-sm;
 	font-size: $form-select-font-size-sm;

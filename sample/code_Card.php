@@ -10,11 +10,17 @@ require_once '../lib/BootSomeCard.php';
 require_once '../lib/BootSomeTables.php';
 \TRP\HealDocument\HealDocument::register_plugin('BootSomeTable');
 
+require_once '../lib/BootSomeDataBlock.php';
+\TRP\HealDocument\HealDocument::register_plugin('BootSomeDataBlock');
+
 $main = BootSome::$body->container();
 $main->el('h1')->te('Card');
 
-$card = $main->card();
-$card->header()->te('Card header');
+$row = $main->row();
+
+$card = $row->col('col-8')->card();
+$card->header('Card header',null,true);
+$card->header_end()->icon('plus')->at(['onclick'=>"alert('New')"]);
 $card->body()->el('code')->el('pre')->te("Some code;\n\tNest;\nEnd;",true);
 
 $group = $card->listgroup();
@@ -49,3 +55,15 @@ $tr->td()->te('Shoulder doner pork');
 $card->footer()->te('This is the end');
 
 $card->footer()->button('Function','explosion','link');
+
+$card = $row->col('col-4')->card();
+$card->header('Card header','danger',true);
+$card->header_end()->button('Add','add','secondary');
+$body = $card->body();
+
+$data = $body->datablock('Family name','[A]');
+$data->at(['onclick' => "BootSome.copy(this,this.textContent.trim());"]);
+$data->icon('copy')->te(' John Doe');
+
+$data = $body->datablock('Postal address','[B]');
+$data->te('123 Example Street'.PHP_EOL.'12345 Example City',true);

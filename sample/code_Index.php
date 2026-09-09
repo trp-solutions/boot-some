@@ -16,7 +16,7 @@ require_once '../lib/BootSomeDocument.php';
 BootSome::document('BootSome() :: '.$page);
 
 BootSome::$head->link('shortcut icon','#');
-BootSome::$head->css('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+BootSome::$head->css('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css');
 BootSome::$head->el('script',['src'=>'../lib/bootstrap.bundle.min.js']);
 BootSome::$head->el('script',['src'=>'../../ufo-ajax/lib/ufo.js']);
 BootSome::$head->el('script',['src'=>'../lib/BootSome.js']);
