@@ -23,7 +23,9 @@ div.form-inline input.form-control {
 table.table select.form-select,
 div.card-header select.form-select,
 div.form-inline select.form-select {
-	padding: $form-select-padding-y-sm $form-select-padding-x-sm;
+	padding-top: $form-select-padding-y-sm;
+	padding-bottom: $form-select-padding-y-sm;
+	padding-left: $form-select-padding-x-sm;
 	font-size: $form-select-font-size-sm;
 	border-radius: $form-select-border-radius-sm;
 }
