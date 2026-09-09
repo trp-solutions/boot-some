@@ -5,8 +5,10 @@ https://github.com/TRP-Solutions/boot-some/blob/master/LICENSE
 ::-webkit-scrollbar {
 	display: none;
 }
-ol, ul, dl {
-  margin-bottom: $spacer;
+
+$spaced-elements: "table.table, div.table-responsive, div.card, ol, ul, dl, div.alert";
+:is(#{$spaced-elements}) + :is(#{$spaced-elements}) {
+	margin-top: $spacer;
 }
 button.btn i + *, a.btn i + *,.dropdown-item i + * {
 	margin-left: $spacer;
