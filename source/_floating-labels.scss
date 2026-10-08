@@ -60,9 +60,16 @@ $form-floating-required-right: 1px !default;
 		z-index: 2;
 		pointer-events: none;
 		font-size: .65em;
+		border-bottom-right-radius: 0;
 
 		color: $secondary;
 		background-color: RGBA(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity, 1));
+	}
+
+	input[type=file] {
+		~ .bootsome-required {
+			border-top-right-radius: 0;
+		}
 	}
 
 	select:invalid,
