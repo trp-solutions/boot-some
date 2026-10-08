@@ -7,8 +7,8 @@ https://github.com/TRP-Solutions/boot-some/blob/master/LICENSE
 	padding-left: calc($form-floating-padding-x * 3);
 }
 
-$form-floating-required-top: max(0px, min($form-floating-padding-y, $form-floating-padding-x)) !default;
-$form-floating-required-right: max(0px, min($form-floating-padding-y, $form-floating-padding-x)) !default;
+$form-floating-required-top: 1px !default;
+$form-floating-required-right: 1px !default;
 
 .form-floating .form-control .form-check-input {
 	margin-top: calc(($form-floating-line-height - 1) / 2 * 1em);
@@ -59,6 +59,7 @@ $form-floating-required-right: max(0px, min($form-floating-padding-y, $form-floa
 		right: $form-floating-required-right;
 		z-index: 2;
 		pointer-events: none;
+		font-size: .65em;
 
 		color: $secondary;
 		background-color: RGBA(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity, 1));
@@ -79,13 +80,6 @@ $form-floating-required-right: max(0px, min($form-floating-padding-y, $form-floa
 		~ .bootsome-required {
 			color: color-contrast($warning);
 			background-color: RGBA(var(--#{$prefix}warning-rgb), var(--#{$prefix}bg-opacity, 1));
-		}
-	}
-
-	select,
-	input[type=number] {
-		~ .bootsome-required {
-			right: calc($form-floating-required-right + $form-select-indicator-padding);
 		}
 	}
 }
